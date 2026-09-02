@@ -148,13 +148,48 @@ herhangi bir sunucuya gönderilmez, dernek bunları göremez:</p>
 <p>Bu bilgileri yalnızca siz görürsünüz; kartınızın arka yüzü telefonunuzdan
 çıkmaz.</p>
 
-<h3>Silme hakkınız</h3>
-<p>Uygulama içinde <strong>Profil → Ayarlar &amp; Bilgi → Hesabım → Bilgilerimi
-Sil</strong> yolunu izleyerek cihazınızda tutulan bilgilerin tamamını kalıcı
-olarak silebilirsiniz. Uygulamayı telefondan kaldırmak da aynı sonucu verir.</p>
-<p>Derneğin üye kaydınızın silinmesini ya da düzeltilmesini isterseniz
-<a href="mailto:info@itfaiyedernegi.com">info@itfaiyedernegi.com</a> adresine
-yazmanız yeterlidir; en geç 30 gün içinde yerine getirilir.</p>
+<h3 id="hesap-silme">Hesabınızı ve verilerinizi silme</h3>
+
+<p><strong>Giriş hesabınızı uygulamadan silebilirsiniz.</strong> Yol:
+<strong>Profil → Ayarlar &amp; Bilgi → Hesabım → Hesabımı Sil</strong>.
+Kimliğinizi doğrulamak için şifreniz sorulur. Silindiğinde giriş hesabınız ve
+şifreniz kaldırılır, cihazınızdaki bilgiler temizlenir. İsterseniz daha sonra
+üye numaranızla yeniden şifre oluşturabilirsiniz.</p>
+
+<p><strong>Yalnızca cihazdaki bilgileri silmek</strong> isterseniz aynı yerdeki
+<strong>Bilgilerimi Sil</strong> seçeneği yeterlidir; uygulamayı telefondan
+kaldırmak da aynı sonucu verir.</p>
+
+<p><strong>Uygulamayı kullanmadan silme talebi:</strong> telefonunuza
+erişemiyorsanız ya da uygulamayı kaldırdıysanız
+<a href="mailto:info@itfaiyedernegi.com?subject=Hesap%20silme%20talebi">
+info@itfaiyedernegi.com</a> adresine üye numaranızla yazın; talebiniz en geç
+30 gün içinde yerine getirilir.</p>
+
+<div class="tablo-sarmal">
+<table>
+  <tr><th>Silinen</th><th>Nerede</th><th>Ne zaman</th></tr>
+  <tr>
+    <td>Giriş hesabı ve şifre</td>
+    <td>Firebase Authentication</td>
+    <td>Talep anında</td>
+  </tr>
+  <tr>
+    <td>Cihazdaki bilgiler (kart arka yüzü, posta seçimi)</td>
+    <td>Telefonunuz</td>
+    <td>Talep anında</td>
+  </tr>
+  <tr>
+    <td>Derneğin üye kaydı (ad, üye numarası)</td>
+    <td>Firestore</td>
+    <td>Ayrıca talep edilirse 30 gün içinde</td>
+  </tr>
+</table>
+</div>
+
+<p>Derneğin üye kaydı, üyeliğinizin dernek nezdindeki kaydıdır ve giriş
+hesabından ayrıdır; onun da silinmesini isterseniz yukarıdaki adrese yazmanız
+yeterlidir.</p>
 
 <h2>4. Google Firebase üzerinden işlenen veriler</h2>
 <p>Uygulama, Google Ireland Limited tarafından sağlanan Firebase hizmetlerini
