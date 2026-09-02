@@ -74,7 +74,7 @@
   <div class="wrap">
     <p class="kurum">İtfaiye Mensupları Yardımlaşma Derneği</p>
     <h1>İMED Mobil Uygulaması<br>Gizlilik Politikası</h1>
-    <p class="tarih">Yürürlük tarihi: 1 Eylül 2026 · Sürüm 1.0</p>
+    <p class="tarih">Yürürlük tarihi: 2 Eylül 2026 · Sürüm 1.1</p>
   </div>
 </header>
 <div class="serit"></div>
@@ -82,13 +82,14 @@
 <main>
 
 <div class="ozet">
-  <p><strong>Kısaca:</strong> İMED mobil uygulaması size ait kişisel bilgileri
-  sunucularımıza göndermez. Üyelik kartında yazan ad, sicil numarası, üyelik
-  yılı, müfreze ve posta bilgisi yalnızca <strong>sizin telefonunuzda</strong>
-  saklanır ve uygulama içinden tek dokunuşla silinebilir. Uygulama, çalışır
-  kalabilmek için Google Firebase üzerinden çökme kayıtları, anonim kullanım
-  istatistikleri ve duyuru bildirimi kaydı tutar. Bunların hiçbiri satılmaz
-  veya pazarlama amacıyla kullanılmaz.</p>
+  <p><strong>Kısaca:</strong> Dernek, üyelerinin <strong>ad soyad ve üye
+  numarasından</strong> oluşan kayıtlarını tutar; uygulamada giriş yapabilmek
+  için bu gereklidir. Şifrenizi biz görmeyiz, Google Firebase şifreli olarak
+  saklar. Üye kartınızın arka yüzüne yazdığınız bilgiler (anne-baba adı, doğum
+  bilgileri, kan grubu, ehliyet sınıfı) <strong>yalnızca sizin telefonunuzda
+  kalır</strong>, derneğe hiç gönderilmez. Uygulama ayrıca çökme kayıtları,
+  anonim kullanım istatistikleri ve duyuru bildirimi kaydı tutar. Hiçbiri
+  satılmaz veya pazarlama amacıyla kullanılmaz.</p>
 </div>
 
 <h2>1. Veri sorumlusu</h2>
@@ -107,27 +108,55 @@ saklıdır; bu metin yalnızca mobil uygulamayı kapsar.</p>
 </table>
 </div>
 
-<h2>2. Telefonunuzda kalan bilgiler</h2>
-<p>Uygulamadaki “Üyelik” bölümünde giriş yaptığınızda aşağıdaki bilgiler
-<strong>yalnızca cihazınızın kendi hafızasında</strong> saklanır. Bu bilgiler
-derneğe veya herhangi bir sunucuya gönderilmez, dernek bunları göremez:</p>
+<h2>2. Üyelik kaydı ve giriş</h2>
+<p>Dernek, üyelerinin kaydını tutar. Bu kayıtta yalnızca şunlar bulunur:</p>
 <ul>
   <li>Ad soyad</li>
-  <li>Sicil numarası</li>
-  <li>Üyelik yılı</li>
-  <li>Müfreze / birim bilgisi</li>
-  <li>Posta (A, B, C) seçiminiz</li>
+  <li>Üye numarası</li>
+  <li>Varsa görev, müfreze/birim ve üyelik yılı</li>
+  <li>Seçtiğiniz posta (A, B, C)</li>
 </ul>
-<p>Bu bilgileri siz girersiniz, uygulama üyelik kartını ve posta takvimini
-size göstermek için kullanır.</p>
+<p>Bu bilgiler derneğin kendi üye kayıtlarından gelir; uygulamada giriş
+yapabilmeniz ve üyelik kartınızın doğru bilgilerle görünmesi için gereklidir.
+Kayıtlar Google Firebase (Firestore) üzerinde tutulur.</p>
+
+<p><strong>Kimse başkasının kaydını göremez.</strong> Sunucu kuralları, giriş
+yapmış bir üyenin yalnızca kendi kaydını okumasına izin verir; üye listesi
+uygulamadan dışarıya açılmaz.</p>
+
+<h3>Şifreniz</h3>
+<p>İlk girişte kendi şifrenizi siz belirlersiniz. Şifreyi dernek görmez ve
+saklamaz; Google Firebase Authentication tarafından şifrelenerek tutulur.
+Giriş için üye numaranız, teknik bir gereklilik nedeniyle
+<code>üyeno@uye.imed.app</code> biçiminde bir hesap adına çevrilir; bu gerçek
+bir e-posta adresi değildir ve posta gönderilmez.</p>
+
+<h3>T.C. kimlik numarası toplanmaz</h3>
+<p>Basılı üye kartınızda T.C. kimlik numarası yazsa da uygulama bu bilgiyi
+istemez, saklamaz ve göstermez.</p>
+
+<h2>3. Yalnızca telefonunuzda kalan bilgiler</h2>
+<p>Üyelik kartınızın <strong>arka yüzüne</strong> girdiğiniz bilgiler
+<strong>yalnızca cihazınızın kendi hafızasında</strong> saklanır. Derneğe ya da
+herhangi bir sunucuya gönderilmez, dernek bunları göremez:</p>
+<ul>
+  <li>Baba adı ve ana adı</li>
+  <li>Doğum yeri (il / ilçe) ve doğum tarihi</li>
+  <li>Kan grubu</li>
+  <li>Ehliyet sınıfı</li>
+</ul>
+<p>Bu bilgileri yalnızca siz görürsünüz; kartınızın arka yüzü telefonunuzdan
+çıkmaz.</p>
 
 <h3>Silme hakkınız</h3>
 <p>Uygulama içinde <strong>Profil → Ayarlar &amp; Bilgi → Hesabım → Bilgilerimi
-Sil</strong> yolunu izleyerek yukarıdaki bilgilerin tamamını cihazınızdan kalıcı
-olarak silebilirsiniz. Uygulamayı telefondan kaldırmak da aynı sonucu verir.
-Silme işlemi için bizimle iletişime geçmeniz gerekmez.</p>
+Sil</strong> yolunu izleyerek cihazınızda tutulan bilgilerin tamamını kalıcı
+olarak silebilirsiniz. Uygulamayı telefondan kaldırmak da aynı sonucu verir.</p>
+<p>Derneğin üye kaydınızın silinmesini ya da düzeltilmesini isterseniz
+<a href="mailto:info@itfaiyedernegi.com">info@itfaiyedernegi.com</a> adresine
+yazmanız yeterlidir; en geç 30 gün içinde yerine getirilir.</p>
 
-<h2>3. Google Firebase üzerinden işlenen veriler</h2>
+<h2>4. Google Firebase üzerinden işlenen veriler</h2>
 <p>Uygulama, Google Ireland Limited tarafından sağlanan Firebase hizmetlerini
 kullanır. Bu hizmetler üzerinden işlenen veriler şunlardır:</p>
 
@@ -165,21 +194,21 @@ Uygulama konum bilgisi, rehber, arama kaydı, SMS veya sağlık verisi
 kapatarak duyuru listesinden çıkabilirsiniz. Kapattığınızda cihazınız duyuru
 konusundan çıkarılır ve bildirim gönderilmez.</p>
 
-<h2>4. Fotoğraf ve kamera erişimi</h2>
-<p>Uygulamada faaliyet ve anlaşmalı kurum içeriği ekleme yetkisi yalnızca
-dernek yönetiminin kullandığı tek bir yönetici hesabındadır. Fotoğraf seçme ve
+<h2>5. Fotoğraf ve kamera erişimi</h2>
+<p>Uygulamada içerik ekleme yetkisi yalnızca dernek yönetiminin kullandığı tek
+bir yönetici hesabındadır. Fotoğraf seçme ve
 kamera izni <strong>yalnızca bu hesapla giriş yapıldığında</strong>, dernek
 duyurusuna görsel eklemek için istenir. Sıradan kullanıcıdan bu izinler hiçbir
 zaman istenmez ve galerinize erişilmez.</p>
 
-<h2>5. Dernek internet sitesinden gelen içerik</h2>
+<h2>6. Dernek internet sitesinden gelen içerik</h2>
 <p>Faaliyetler, anlaşmalı kurumlar, tüzük, yönetim kurulu ve şehitlerimiz gibi
 içerikler derneğin <a href="https://www.itfaiyedernegi.com">itfaiyedernegi.com</a>
 adresindeki sitesinden okunur. Bu istekler herkese açık içerik istekleridir;
 kimliğinizi taşımaz. İçerik, internetiniz yokken de görebilmeniz için
 cihazınızda geçici olarak saklanır.</p>
 
-<h2>6. Verilerin paylaşımı</h2>
+<h2>7. Verilerin paylaşımı</h2>
 <p>Kişisel verilerinizi satmayız, kiralamayız ve reklam amacıyla üçüncü
 taraflara aktarmayız. Yukarıda sayılan Firebase hizmetleri dışında veri
 aktarımı yapılmaz. Firebase verileri Google’ın sunucularında işlenir;
@@ -187,10 +216,14 @@ Google’ın gizlilik politikası
 <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>
 adresindedir.</p>
 
-<h2>7. Saklama süreleri</h2>
+<h2>8. Saklama süreleri</h2>
 <ul>
-  <li><strong>Cihazdaki üyelik bilgileri:</strong> siz silene veya uygulamayı
-      kaldırana kadar.</li>
+  <li><strong>Dernek üye kaydı (ad, üye no):</strong> üyeliğiniz sürdüğü
+      sürece; silinmesini istediğinizde kaldırılır.</li>
+  <li><strong>Giriş hesabınız ve şifreniz:</strong> hesabınız silinene
+      kadar.</li>
+  <li><strong>Cihazınızda kalan kart bilgileri:</strong> siz silene veya
+      uygulamayı kaldırana kadar.</li>
   <li><strong>Çökme kayıtları:</strong> Firebase Crashlytics’in varsayılan
       süresi olan 90 gün.</li>
   <li><strong>Kullanım istatistikleri:</strong> Firebase Analytics’in
@@ -199,11 +232,11 @@ adresindedir.</p>
       uygulamayı kaldırdığınızda geçersiz olur.</li>
 </ul>
 
-<h2>8. Çocukların gizliliği</h2>
+<h2>9. Çocukların gizliliği</h2>
 <p>Uygulama itfaiye mensuplarına ve dernek üyelerine yöneliktir; 13 yaş altı
 çocuklara yönelik değildir ve bilerek onlardan veri toplamaz.</p>
 
-<h2>9. KVKK kapsamındaki haklarınız</h2>
+<h2>10. KVKK kapsamındaki haklarınız</h2>
 <p>6698 sayılı Kişisel Verilerin Korunması Kanunu’nun 11. maddesi uyarınca;
 kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep
 etme, düzeltilmesini veya silinmesini isteme ve işlemeye itiraz etme
@@ -211,11 +244,11 @@ haklarına sahipsiniz. Başvurularınızı
 <a href="mailto:info@itfaiyedernegi.com">info@itfaiyedernegi.com</a> adresine
 iletebilirsiniz; en geç 30 gün içinde yanıt verilir.</p>
 
-<h2>10. Bu politikadaki değişiklikler</h2>
+<h2>11. Bu politikadaki değişiklikler</h2>
 <p>Politika güncellenirse bu sayfadaki yürürlük tarihi değişir. Önemli
 değişiklikler uygulama içi duyuru ile bildirilir.</p>
 
-<h2>11. İletişim</h2>
+<h2>12. İletişim</h2>
 <p>Gizlilikle ilgili her türlü soru için:
 <a href="mailto:info@itfaiyedernegi.com">info@itfaiyedernegi.com</a> ·
 <a href="tel:+902125342116">+90 212 534 21 16</a></p>
